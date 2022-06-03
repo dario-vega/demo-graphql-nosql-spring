@@ -21,6 +21,6 @@ import org.springframework.beans.factory.annotation.Value;
         public NosqlDbConfig nosqlDbConfig() 
             throws java.io.IOException {              
             System.out.println (NOSQL_ENDPOINT);
-            return new NosqlDbConfig(OCI_REGION,  new StoreAccessTokenProvider());
+            return new NosqlDbConfig(NOSQL_ENDPOINT,  new StoreAccessTokenProvider());
         }
     }
