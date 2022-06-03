@@ -14,7 +14,7 @@ import org.springframework.beans.factory.annotation.Value;
     @Configuration
     @EnableNosqlRepositories
     public class AppConfig extends AbstractNosqlConfiguration {  
-        @Value("${nosql.nosqlendpoint}")
+        @Value("${nosql.endpoint}")
         private String NOSQL_ENDPOINT;
 
         @Bean
