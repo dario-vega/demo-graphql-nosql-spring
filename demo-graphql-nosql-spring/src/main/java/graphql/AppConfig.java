@@ -14,24 +14,13 @@ import org.springframework.beans.factory.annotation.Value;
     @Configuration
     @EnableNosqlRepositories
     public class AppConfig extends AbstractNosqlConfiguration {  
-        @Value("${nosql.ociregion}")
-        private String OCI_REGION;
-        @Value("${nosql.ocid_comp}")
-        private String OCI_COMPID;
+        @Value("${nosql.nosqlendpoint}")
+        private String NOSQL_ENDPOINT;
+
         @Bean
         public NosqlDbConfig nosqlDbConfig() 
-            throws java.io.IOException {
-              
-            /* Config for cloud service using instance principal. */                         
-            SignatureProvider provider = SignatureProvider.createWithInstancePrincipal();
-   
-            /* Use the same region your instance VM runs in. */ 
-            //NoSQLHandleConfig config = new NoSQLHandleConfig(Region.US_ASHBURN_1, provider);
-            NoSQLHandleConfig config = new NoSQLHandleConfig(OCI_REGION, provider);
-
-            config.setDefaultCompartment(OCI_COMPID);
-            System.out.println (OCI_REGION);
-            System.out.println (OCI_COMPID);
-            return new NosqlDbConfig(config);
+            throws java.io.IOException {              
+            System.out.println (NOSQL_ENDPOINT);
+            return new NosqlDbConfig(OCI_REGION,  new StoreAccessTokenProvider());
         }
     }
