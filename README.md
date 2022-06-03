@@ -1,22 +1,12 @@
 # demo-graphql-nosql-spring
 
-## Develop Applications Fast and Effortlessly with Oracle NoSQL Database Cloud Service
-
+## Develop Applications Fast and Effortlessly with Oracle NoSQL Database
 Work in Progress 👷
-
-## Connect and go
-
-1. **Connect to Oracle NoSQL Database Cloud Service** - Your application connects to Oracle NoSQL Database Cloud Service by specifying credentials and a target region for the connection
-2. **Create a table** Oracle offers a NoSQL fully managed service, no need to create any cluster. Just create a table for your data. 
-In this case, the spring application will create it automatically for you
-4. **Develop your application** Use the NoSQL Database SDKs/Drivers. These are full featured SDKs and offer a rich set of functionality. 
-In this case, we will deploy a spring application using [Oracle NoSQL Database SDK for Spring Data](https://github.com/oracle/nosql-spring-sdk) 
-
 
 ## Connect instructions
 Work in Progress 👷
 
-In this version, this application connects to Oracle NoSQL Database Cloud Service by using Instance Principals
+In this version, this application connects to Oracle NoSQL Database - non-secure configuration.
 
 You can modify the parameter in the file [application.properties](demo-graphql-nosql-spring/src/main/resources/application.properties)
 
@@ -24,8 +14,7 @@ or
 
 Set the following env variables
 ````
-export OCI_REGION="us-ashburn-1"
-export OCI_NOSQL_COMPID="ocid1.compartment.oc1..xxxx"
+export NOSQL_ENDPOINT=http://httproxy-nosql:8080 
 ````
 
 ## Deployment and Execution instructions
